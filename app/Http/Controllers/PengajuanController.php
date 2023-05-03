@@ -43,15 +43,12 @@ class PengajuanController extends Controller
 
     public function showDataDetailPengajuan()
     {
-        // $dataPengajuan = dataPengajuan::all();
-        // $dataPerusahaan = dataPerusahaan::all();
-        // $dataProduk = dataProduk::all();
-        $dataDetailPengajuan = dataDetailPengajuan::all();
-        
-        // $dataDetailPengajuan = dataDetailPengajuan::find(3);
 
-        // dd($dataPengajuan, $dataPerusahaan, $dataProduk, $dataDetailPengajuan);
-        // @dd($dataDetailPengajuan->dataProduk());
+        if(Auth::guard('dataAkunMitra')->user() === null) {
+            $dataDetailPengajuan = dataDetailPengajuan::all();
+        } else {
+            $dataDetailPengajuan = dataDetailPengajuan::whereRelation('dataPengajuan', 'id_mitra', Auth::guard('dataAkunMitra')->user()->id_mitra)->get();
+        };
 
         return view('dataPengajuan', compact('dataDetailPengajuan'));
     }
@@ -61,7 +58,7 @@ class PengajuanController extends Controller
         // $dataPengajuan = dataPengajuan::all();
         // $dataPerusahaan = dataPerusahaan::all();
         // $dataProduk = dataProduk::all();
-        $dataDetailPengajuan = dataDetailPengajuan::all();
+        $dataDetailPengajuan = dataDetailPengajuan::paginate(10);
         // $dataDetailPengajuan = dataDetailPengajuan::find(3);
 
         // dd($dataPengajuan, $dataPerusahaan, $dataProduk, $dataDetailPengajuan);
@@ -135,22 +132,24 @@ class PengajuanController extends Controller
 
         $gambar = $request->gambar_produk;
         $gmbr = $gambar->getClientOriginalName();
-
+        
         $dataProduk = dataProduk::create([
             'nama_produk' => $request->nama_produk,
             'harga_produk' => $request->harga_produk,
             'deskripsi_produk' => $request->deskripsi_produk,
-            'gambar_produk' => $gambar
-
+            'gambar_produk' => $gmbr,
+           
+            $gambar->move(public_path().'/img',$gmbr),
+            
+            
         ]);
-        $gambar->move(public_path().'/img',$gmbr);
 
 
         $dataPengajuan = dataPengajuan::create([
             'id_perusahaan_foreign' => $dataPerusahaan->id_perusahaan,
             'id_status_pengajuan' => 1,
             'id_mitra' => Auth::guard('dataAkunMitra')->user()->id_mitra,
-            'tanggal' => '2023-07-22'
+            'tanggal' => '2023-05-03'
         ]);
 
         dataDetailPengajuan::create([
@@ -169,7 +168,7 @@ class PengajuanController extends Controller
         // @dd($data);
         dataPengajuan::where('id_pengajuan', $detail->id_pengajuan)->update($data);
 
-        return redirect('detailPengajuan', compact('dataDetailPengajuan'));
+        return redirect('/detail_pengajuan/' . $dataDetailPengajuan->id_detail_pengajuan);
 
     }
 
@@ -181,7 +180,7 @@ class PengajuanController extends Controller
         // @dd($data);
         dataPengajuan::where('id_pengajuan', $detail->id_pengajuan)->update($data);
 
-        return view('detailPengajuan', compact('dataDetailPengajuan'));
+        return redirect('/detail_pengajuan/' . $dataDetailPengajuan->id_detail_pengajuan);
 
     }
 };

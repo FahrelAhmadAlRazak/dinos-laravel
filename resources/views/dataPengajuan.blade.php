@@ -1,3 +1,4 @@
+
 @extends('layoutsPengajuan.masterDataPengajuan')
 
 @section('content')
@@ -21,17 +22,18 @@
 
                 @foreach ($dataDetailPengajuan as $item)
                 {{-- @dd($item->dataProduk) --}}
-                <tr>
-                    <td><a href="/detail_pengajuan/{{ $item->id_detail_pengajuan }}">{{ $item->id_detail_pengajuan }}</a></td>
-                    <td><a href="#">{{ $item->dataPengajuan->dataPerusahaan->nama_perusahaan }}</a></td>
-                    <td><a href="#">Jalan {{ $item->dataPengajuan->dataPerusahaan->jalan }}, {{ $item->dataPengajuan->dataPerusahaan->dataKota->nama }}, {{ $item->dataPengajuan->dataPerusahaan->dataProvinsi->nama }}</a></td>
-                    <td><a href="#">{{ $item->dataPengajuan->dataPerusahaan->notelp_perusahaan }}</a></td>
-                    <td><a href="#">{{ $item->dataProduk->nama_produk }}</a></td>
-                    <td><a href="#">{{ $item->jumlah_produk }}</a></td>
-                    <td><a href="#">{{ $item->dataProduk->harga_produk }}</a></td>
-                    <td><a href="#">{{ $item->id_detail_pengajuan }}</a></td>
+                <tr class="bg-slate-200">
+                    <td class="text-center"><a href="/detail_pengajuan/{{ $item->id_detail_pengajuan }}">{{ $item->id_detail_pengajuan }}</a></td>
+                    <td class="text-center"><a href="#">{{ $item->dataPengajuan->dataPerusahaan->nama_perusahaan }}</a></td>
+                    <td class="text-center"><a href="#">Jalan {{ $item->dataPengajuan->dataPerusahaan->jalan }}, {{ $item->dataPengajuan->dataPerusahaan->dataKota->nama }}, {{ $item->dataPengajuan->dataPerusahaan->dataProvinsi->nama }}</a></td>
+                    <td class="text-center"><a href="#">{{ $item->dataPengajuan->dataPerusahaan->notelp_perusahaan }}</a></td>
+                    <td class="text-center"><a href="#">{{ $item->dataProduk->nama_produk }}</a></td>
+                    <td class="text-center"><a href="#">{{ $item->jumlah_produk }}</a></td>
+                    <td class="text-center"><a href="#">{{ $item->dataProduk->harga_produk }}</a></td>
+                    <td class="text-center"><a href="#">{{ $item->id_detail_pengajuan }}</a></td>
                     {{-- <td>{{  $item->dataProduk->gambar_produk }}</td> --}}
-                    <td><img src="{{ $item->dataProduk->gambar_produk }}" alt="image"></td>
+                    <td><img src="{{ asset('img/'.$item->dataProduk->gambar_produk) }}" alt="{{ $item->dataProduk->gambar_produk }}"></td>
+                    <!-- {{ asset('images/person.svg') }} -->
                    
                     
                 </tr>
@@ -39,6 +41,7 @@
                 
 
                 @endforeach
+                
                 
 
 

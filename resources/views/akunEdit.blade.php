@@ -13,7 +13,7 @@
                         <td class="w-1/3 px-4 py-3">Nama</td>
                         <td>
                             <label for="nama"></label>
-                            <input type="text" name="nama" id="nama" class="form-control w-full  bg-transparent" value="{{ auth()->user()->nama }}">
+                            <input type="text" name="nama" id="nama" class="form-control w-full  bg-transparent" value="{{ auth()->user()->nama }}" required>
                         </td>
                     </tr>
                 </div>
@@ -23,7 +23,7 @@
                         <td class="w-1/3 px-4 py-3">Username</td>
                         <td>
                             <label for="username"></label>
-                            <input type="text" name="username" id="username" class="form-control w-full  bg-transparent" value="{{ auth()->user()->username }}">
+                            <input type="text" name="username" id="username" class="form-control w-full  bg-transparent" value="{{ auth()->user()->username }}" required>
                         </td>
                     </tr>
                 </div>
@@ -33,7 +33,7 @@
                         <td class="w-1/3 px-4 py-3">Email</td>
                         <td>
                         <label for="email"></label>
-                            <input type="email" name="email" id="email" class="form-control w-full  bg-transparent" value="{{ auth()->user()->email }}">
+                            <input type="email" name="email" id="email" class="form-control w-full  bg-transparent" value="{{ auth()->user()->email }}" required>
                         </td>
                     </tr>
                 </div>
@@ -53,7 +53,7 @@
                         <td class="w-1/3 px-4 py-3">Nomor Identitas</td>
                         <td>
                         <label for="nomor_identitas"></label>
-                            <input type="text" name="nomor_identitas" id="nomor_identitas" class="form-control w-full  bg-transparent" value="{{ auth()->user()->nomor_identitas }}">
+                            <input type="text" name="nomor_identitas" id="nomor_identitas" class="form-control w-full  bg-transparent" value="{{ auth()->user()->nomor_identitas }}" required>
                         </td>
                     </tr>
                 </div>
@@ -90,7 +90,7 @@
                         <td class="w-1/3 px-4 py-3">Jalan</td>
                         <td>
                         <label for="Jalan"></label>
-                            <input type="text" name="jalan" id="jalan" class="form-control w-full  bg-transparent" value="{{ auth()->user()->jalan }}">
+                            <input type="text" name="jalan" id="jalan" class="form-control w-full  bg-transparent" value="{{ auth()->user()->jalan }}" required>
                         </td>
                     </tr>
                 </div>
@@ -134,7 +134,7 @@
                     <td class="w-1/3 px-4 py-3">No Telepon</td>
                     <td>
                         <label for="no_telpon"></label> 
-                        <input type="text" name="no_telpon" id="no_telpon" class="form-control w-full  bg-transparent" value="{{ auth()->user()->no_telpon }}">
+                        <input type="text" name="no_telpon" id="no_telpon" class="form-control w-full  bg-transparent" value="{{ auth()->user()->no_telpon }}" required>
                     </td>
                 </tr>
                 </div>
@@ -143,7 +143,7 @@
                     <td class="w-1/3 px-4 py-3">Tanggal Lahir</td>
                     <td>
                     <label for="tanggal_lahir"></label> 
-                        <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control w-full  bg-transparent" value="{{ auth()->user()->tanggal_lahir }}">
+                        <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control w-full  bg-transparent" value="{{ auth()->user()->tanggal_lahir }}" required>
                     </td>
                 </tr>
                 
@@ -181,6 +181,9 @@
 <div id="passwordModal" data-modal-backdrop="static" tabindex="-1"  class="fixed top-0 left-0 right-0 z-50 w-full p-4  overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <form class="bg-white relative px-8 py-6 w-1/3 max-w-2xl max-h-full flex flex-col items-center" action="/cekpassword" method="post">
         @csrf
+        <a href="/akun">
+            <p style="position: absolute; top: 4px; right: 16px; cursor: pointer;">X</p>
+        </a>
         <h2 class="text-2xl font-bold mb-2">Password Validasi!</h2>
         <h3 class="text-xl mb-6">Masukan password anda :</h3>
         <input type="text" placeholder="Password" class="px-4 border border-slate-50 w-full rounded shadow-md" name="password" id="password">

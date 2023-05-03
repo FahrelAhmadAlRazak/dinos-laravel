@@ -37,7 +37,7 @@
                
 
                 <div class="form-group">
-                    <tr class="bg-slate-200">
+                    <tr>
                         <td class="w-1/3 px-4 py-3">Alamat Pemilik</td>
                         <td>
                             {{ $dataDetailPengajuan->dataPengajuan->dataAkunMitra->jalan }}, {{ $dataDetailPengajuan->dataPengajuan->dataAkunMitra->dataKota->nama }}, {{ $dataDetailPengajuan->dataPengajuan->dataAkunMitra->dataProvinsi->nama }}
@@ -46,14 +46,14 @@
                 </div>
 
                 <div class="form-group">
-                    <tr>
+                    <tr class="bg-slate-200">
                         <td class="w-1/3 px-4 py-3">Nama Usaha/Produk</td>
                         <td>{{ $dataDetailPengajuan->dataPengajuan->dataPerusahaan->nama_perusahaan }}</td>
                     </tr>
                 </div>
 
                 <div class="form-group">
-                    <tr class="bg-slate-200">
+                    <tr>
                         <td class="w-1/3 px-4 py-3">Alamat Tempat Usaha</td>
                         <td>
                         {{ $dataDetailPengajuan->dataPengajuan->dataPerusahaan->jalan }}, {{ $dataDetailPengajuan->dataPengajuan->dataPerusahaan->dataKota->nama }}, {{ $dataDetailPengajuan->dataPengajuan->dataPerusahaan->dataProvinsi->nama }}
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="form-group">
-                <tr>
+                <tr class="bg-slate-200">
                     <td class="w-1/3 px-4 py-3">Nomor Izin Usaha</td>
                     <td>
                     {{ $dataDetailPengajuan->dataPengajuan->dataPerusahaan->nomer_izin_usaha }}
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="form-group">
-                <tr class="bg-slate-200">
+                <tr>
                     <td class="w-1/3 px-4 py-3">No Telepon Perusahaan</td>
                     <td>
                     {{ $dataDetailPengajuan->dataPengajuan->dataPerusahaan->notelp_perusahaan }}
@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="form-group">
-                <tr class="bg-slate-200">
+                <tr>
                     <td class="w-1/3 px-4 py-3">Nama Produk yang Diajukan</td>
                     <td>
                     {{ $dataDetailPengajuan->dataProduk->nama_produk }}
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="form-group">
-                <tr class="bg-slate-200">
+                <tr>
                     <td class="w-1/3 px-4 py-3">Harga Produk yang Diajukan</td>
                     <td>
                     {{ $dataDetailPengajuan->dataProduk->harga_produk }}
@@ -125,10 +125,10 @@
                 </div>
 
                 <div class="form-group">
-                <tr class="bg-slate-200">
+                <tr>
                     <td class="w-1/3 px-4 py-3">Gambar Produk</td>
                     {{-- <td>{{  $item->dataProduk->gambar_produk }}</td> --}}
-                    <td><img src="{{ $dataDetailPengajuan->dataProduk->gambar_produk }}" alt="image"></td>
+                    <td><img src="{{ asset('img/'.$dataDetailPengajuan->dataProduk->gambar_produk) }}" alt="image"></td>
                 </tr>
                 </div>
 

@@ -10,7 +10,7 @@
                     <tr class="bg-slate-200">
                         <td class="w-1/3 px-4 py-3 mb-3">Nama Usaha</td>
                         <td>
-                            <input type="text" name="nama_perusahaan" id="nama_perusahaan" class="w-full bg-transparent form-control">
+                            <input type="text" name="nama_perusahaan" id="nama_perusahaan" class="w-full bg-transparent form-control" required>
                         </td>
                     </tr>
                 </div>
@@ -21,7 +21,7 @@
                     <td class="w-1/3 px-4 py-3 mb-3">Alamat Tempat Usaha</td>
                     <td>
                         <label for="exampleFormControlSelect2">jalan</label>
-                        <input type="text" name="jalan" id="jalan" class="w-50 mb-3  bg-transparent form-control">
+                        <input type="text" name="jalan" id="jalan" class="w-50 mb-3  bg-transparent form-control" required>
                         <div class="form-group">
                             <label for="exampleFormControlSelect2">Kota</label>
                             <select class="form-control w-50 mb-3" name="id_kota" id="id_kota">
@@ -48,7 +48,7 @@
                     <tr class="bg-slate-200">
                         <td class="w-1/3 px-4 py-3">Nomor Izin Usaha</td>
                         <td class="form-group">
-                            <input type="text" name="nomer_izin_usaha" id="nomer_izin_usaha" class="w-full  bg-transparent form-control">
+                            <input type="text" name="nomer_izin_usaha" id="nomer_izin_usaha" class="w-full  bg-transparent form-control" required>
                         </td>
                     </tr>
                 </div>
@@ -56,7 +56,7 @@
                     <tr>
                         <td class="w-1/3 px-4 py-3">Nomor Telepon Perusahaan</td>
                         <td class="form-group">
-                            <input type="text" name="notelp_perusahaan" id="notelp_perusahaan" class="w-full  bg-transparent form-control">
+                            <input type="text" name="notelp_perusahaan" id="notelp_perusahaan" class="w-full  bg-transparent form-control" required>
                         </td>
                     </tr>
                 </div class="form-group">
@@ -64,15 +64,15 @@
                     <tr class="bg-slate-200">
                         <td class="w-1/3 px-4 py-3">Email Perusahaan</td>
                         <td class="form-group">
-                            <input type="email" name="email_perusahaan" id="email_perusahaan" class="w-full  bg-transparent form-control">
+                            <input type="email" name="email_perusahaan" id="email_perusahaan" class="w-full  bg-transparent form-control" required>
                         </td>
                     </tr>
                 </div>
                 <div class="form-group">
-                    <tr class="bg-slate-200">
+                    <tr>
                         <td class="w-1/3 px-4 py-3 mb-3">Nama Produk yang Diajukan</td>
                         <td>
-                            <input type="text" name="nama_produk" id="nama_produk" class="w-full bg-transparent form-control">
+                            <input type="text" name="nama_produk" id="nama_produk" class="w-full bg-transparent form-control" required>
                         </td>
                     </tr>
                 </div>
@@ -80,28 +80,28 @@
                     <tr class="bg-slate-200">
                         <td class="w-1/3 px-4 py-3 mb-3">Jumlah Produk yang Diajukan</td>
                         <td>
-                            <input type="number" name="jumlah_produk" id="jumlah_produk" class="w-full bg-transparent form-control">
-                        </td>
-                    </tr>
-                </div>
-                <div class="form-group">
-                    <tr class="bg-slate-200">
-                        <td class="w-1/3 px-4 py-3">Harga Produk yang Diajuakan</td>
-                        <td class="form-group">
-                            <input type="text" name="harga_produk" id="harga_produk" class="w-full  bg-transparent form-control">
+                            <input type="number" name="jumlah_produk" id="jumlah_produk" class="w-full bg-transparent form-control" required>
                         </td>
                     </tr>
                 </div>
                 <div class="form-group">
                     <tr>
+                        <td class="w-1/3 px-4 py-3">Harga Produk yang Diajuakan</td>
+                        <td class="form-group">
+                            <input type="text" name="harga_produk" id="harga_produk" class="w-full  bg-transparent form-control" required>
+                        </td>
+                    </tr>
+                </div>
+                <div class="form-group">
+                    <tr class="bg-slate-200">
                         <td class="w-1/3 px-4 py-3">Deskripsi Produk yang Diajuakan</td>
                         <td class="form-group">
-                            <input type="text" name="deskripsi_produk" id="deskripsi_produk" class="w-full  bg-transparent form-control">
+                            <textarea type="text" name="deskripsi_produk" id="deskripsi_produk" class="w-full  bg-transparent form-control" required></textarea>
                         </td>
                     </tr>
                 </div class="form-group">
                 <div>
-                    <tr class="bg-slate-200">
+                    <tr>
                         <td class="w-1/3 px-4 py-3">Gambar Produk</td>
                         <td class="form-group">
                             <input type="file" name="gambar_produk" id="gambar_produk" class="w-full  bg-transparent form-control" multiple>
@@ -140,7 +140,7 @@
 
 
             <div class="form-check w-1/2 flex justify-center items-center">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                 <label class="form-check-label" for="exampleCheck1">Setuju</label>
             </div>
             <button class="selanjutnya w-1/2 bg-admin-secondary hover:opacity-90 py-1 rounded-full text-white flex justify-center items-center">Kirim</button>
