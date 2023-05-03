@@ -33,8 +33,6 @@
                     <td class="text-center"><a href="#">{{ $item->id_detail_pengajuan }}</a></td>
                     {{-- <td>{{  $item->dataProduk->gambar_produk }}</td> --}}
                     <td><img src="{{ asset('img/'.$item->dataProduk->gambar_produk) }}" alt="{{ $item->dataProduk->gambar_produk }}"></td>
-                   
-                   
                     
                 </tr>
                 
