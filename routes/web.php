@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
 Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/home', function () {
     return view('landing-page');
 })->name('landing.page');
 
@@ -78,6 +78,14 @@ Route::get('/dataPartner', function () {
 Route::get('/coba', function () {
     return view('coba');
 })->name('coba');
+
+Route::get('/monitor', function () {
+    return view('monitor');
+})->name('monitor');
+
+Route::get('/detailMonitor', function () {
+    return view('detailMonitor');
+})->name('detailMonitor');
 
 
 

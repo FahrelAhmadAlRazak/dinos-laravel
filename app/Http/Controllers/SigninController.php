@@ -37,6 +37,6 @@ class SigninController extends Controller
         }elseif(Auth::guard('dataAkunKurir')->check()){
             Auth::guard('dataAkunKurir')->logout();
         }
-        return redirect('/home');
+        return redirect('/');
     }
 }

@@ -1,7 +1,7 @@
-@extends('layoutsPengiriman.masterPengiriman')
+@extends('layoutsDashboard.masterDashboard')
 
 @section('content')
-@if(auth()->user()->level=="admin")
+@if(Str::length(Auth::guard('dataAkunAdmin')->user()) > 0)
 <div id="content" class="pt-24 px-2 py-4 flex-grow h-screen">
 
     <div class="my-2 px-8 pt-6 pb-4 shadow w-full h-full overflow-y-scroll">
@@ -27,7 +27,7 @@
 
 </div>
 @endif
-@if(auth()->user()->level=="mitra")
+@if(Str::length(Auth::guard('dataAkunMitra')->user()) > 0)
 <div id="content" class="pt-24 px-2 py-4 flex-grow h-screen">
 
     <div class="my-2 px-8 pt-6 pb-4 shadow w-full h-full overflow-y-scroll">
@@ -53,7 +53,7 @@
 
 </div>
 @endif
-@if(auth()->user()->level=="kurir")
+@if(Str::length(Auth::guard('dataAkunKurir')->user()) > 0)
 <div id="content" class="pt-24 px-2 py-4 flex-grow h-screen">
 
     <div class="my-2 px-8 pt-6 pb-4 shadow w-full h-full overflow-y-scroll">

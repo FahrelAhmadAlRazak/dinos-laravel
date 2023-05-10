@@ -58,13 +58,13 @@
             </a> -->
             @if(Str::length(Auth::guard('dataAkunAdmin')->user()) > 0)
             
-            <a href="/test/pages/admin/" class="flex items-center gap-3 px-8">
+            <a href="{{ route('monitor') }}" class="flex items-center gap-3 px-8">
                 <img src="{{ asset('images/monitor.svg') }}" class="w-5" alt="">
                 <p class="text-white hidden lg:block">Monitor</p>
             </a>
             @endif
             @if(Str::length(Auth::guard('dataAkunMitra')->user()) > 0)
-            <a href="/test/pages/admin/" class="flex items-center gap-3 px-8">
+            <a href="{{ route('monitor') }}" class="flex items-center gap-3 px-8">
                 <img src="{{ asset('images/monitor.svg') }}" class="w-5" alt="">
                 <p class="text-white hidden lg:block">Monitor</p>
             </a>

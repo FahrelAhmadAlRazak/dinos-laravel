@@ -33,7 +33,6 @@ class AkunController extends Controller
             'username' => 'required',
             'email' => 'required',
             'password' => 'required',
-            
             'jalan' =>'required',
             'id_kota'=> 'required',
             'id_provinsi'=> 'required',
