@@ -111,7 +111,7 @@
                     </table>
                     <button id="passwordModalConf" class="mt-2 bg-blue-500 text-white px-4 py-1 rounded">Simpan</button>
                     <a id="passwordModalConf" class="mt-2 bg-blue-500 text-white px-4 py-1 rounded" href="#">Batal</a>
-                    <p id="passwordModalErr" class="hidden mt-3 bg-red-700 text-white px-8 py-2 rounded-lg">“Password yang anda masukkan salah!”</p>
+                    <p id="passwordModalErr" class="hidden mt-3 bg-red-700 text-white px-8 py-2 rounded-lg">“Data harus diisikan secara lengkap!”</p>
                 </form>
             </div>
         </div>
